@@ -1,0 +1,16 @@
+# Dependencias y compilación
+node_modules/
+dist/
+.vite/
+
+# Archivos pesados / multimedia de grabación o despliegue
+*.zip
+*.mp4
+*.avi
+*.log
+
+# Archivos de entorno y SO
+.env
+.env.local
+.DS_Store
+Thumbs.db
