@@ -144,6 +144,9 @@ let gameStarted = false;
 let isPaused = false;
 
 window.addEventListener('keydown', (e) => {
+    if (!gameStarted && (e.key === 'Enter' || e.code === 'Space' || e.key === ' ')) {
+        if (typeof window.startGame === 'function') window.startGame();
+    }
     const key = e.key.toLowerCase();
     if (keys.hasOwnProperty(key)) keys[key] = true;
     if (e.code === 'Space') keys.space = true;
@@ -667,9 +670,12 @@ function startMusic() {
 
 // Botón de Inicio
 window.startGame = function() {
-    const menu = document.getElementById('start-menu');
-    if (menu) menu.style.display = 'none';
     gameStarted = true;
+    const menu = document.getElementById('start-menu');
+    if (menu) {
+        menu.style.display = 'none';
+        try { menu.remove(); } catch(e){}
+    }
     try { startMusic(); } catch(err) { console.log("Audio block:", err); }
     try { clock.start(); } catch(err) { console.log("Clock err:", err); }
 };
