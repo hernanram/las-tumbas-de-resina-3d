@@ -11,7 +11,7 @@
       <div style="background: rgba(10, 0, 10, 0.85); padding: 50px; border-radius: 20px; border: 2px solid #ffaa00; text-align: center; box-shadow: 0 0 50px rgba(255,170,0,0.5);">
         <h1 style="font-size: 4.5rem; color: #ffaa00; margin-bottom: 20px; text-shadow: 0 0 15px #ffaa00, 2px 2px 5px #000;">LAS TUMBAS DE RESINA</h1>
         <p style="color: #eee; margin-bottom: 30px; font-size: 1.3rem; line-height: 1.8; text-shadow: 1px 1px 2px #000;">WASD para Mover | CLIC IZQUIERDO para Atacar<br>ANTICLIC (Clic Derecho) para Saltar<br>SHIFT para Dash | Q para Curar</p>
-        <button id="btn-start" style="padding: 15px 50px; font-size: 1.8rem; cursor: pointer; background: linear-gradient(45deg, #ff00ff, #8800ff); color: white; border: 2px solid #fff; border-radius: 10px; font-weight: bold; box-shadow: 0 0 20px #ff00ff; transition: transform 0.2s;">EMPEZAR JUEGO</button>
+        <button id="btn-start" onclick="if(window.startGame){window.startGame();}else{document.getElementById('start-menu').style.display='none';}" style="padding: 15px 50px; font-size: 1.8rem; cursor: pointer; background: linear-gradient(45deg, #ff00ff, #8800ff); color: white; border: 2px solid #fff; border-radius: 10px; font-weight: bold; box-shadow: 0 0 20px #ff00ff; transition: transform 0.2s;">EMPEZAR JUEGO</button>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         <p style="color: #ddd; margin-bottom: 30px; font-size: 1.2rem; line-height: 1.6; text-shadow: 1px 1px 3px #000;">
           Has caído en las sombras de Las Tumbas de Resina.
         </p>
-        <button id="btn-restart" style="padding: 16px 45px; font-size: 1.5rem; cursor: pointer; background: linear-gradient(45deg, #cc0000, #ff4444); color: white; border: 2px solid #ffffff; border-radius: 10px; font-weight: bold; box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); transition: transform 0.2s ease;">
+        <button id="btn-restart" onclick="window.location.reload();" style="padding: 16px 45px; font-size: 1.5rem; cursor: pointer; background: linear-gradient(45deg, #cc0000, #ff4444); color: white; border: 2px solid #ffffff; border-radius: 10px; font-weight: bold; box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); transition: transform 0.2s ease;">
           🔄 EMPEZAR DE NUEVO
         </button>
       </div>

@@ -666,12 +666,18 @@ function startMusic() {
 }
 
 // Botón de Inicio
-document.getElementById('btn-start').addEventListener('click', () => {
-    document.getElementById('start-menu').style.display = 'none';
+window.startGame = function() {
+    const menu = document.getElementById('start-menu');
+    if (menu) menu.style.display = 'none';
     gameStarted = true;
-    startMusic();
-    clock.start(); // Reiniciar el reloj para no contar el tiempo del menú
-});
+    try { startMusic(); } catch(err) { console.log("Audio block:", err); }
+    try { clock.start(); } catch(err) { console.log("Clock err:", err); }
+};
+
+const btnStart = document.getElementById('btn-start');
+if (btnStart) {
+    btnStart.addEventListener('click', window.startGame);
+}
 
 // Botón de Reiniciar Juego (Game Over)
 document.getElementById('btn-restart').addEventListener('click', () => {
